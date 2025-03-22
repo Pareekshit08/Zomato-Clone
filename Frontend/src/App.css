@@ -1,0 +1,254 @@
+*{
+    margin :0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.Location-Cards{
+    width: 90%;
+    margin: auto;
+}
+
+.zomato-app-section {
+    background: #fff8f5;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .zomato-app-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    width: 90%;
+  }
+  
+  .zomato-app-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .zomato-app-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .zomato-app-right {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .zomato-app-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1c1c1c;
+  }
+  
+  .zomato-app-description {
+    font-size: 16px;
+    color: #5a5a5a;
+    margin: 10px 0 20px;
+  }
+  .zomato-app-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .zomato-app-options label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px; /* Space for custom radio */
+  }
+  
+  .zomato-app-options input {
+    display: none; /* Hide default radio button */
+  }
+  
+  /* Custom radio button */
+  .zomato-app-options label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f04f5f; /* Red border */
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    transition: 0.3s;
+  }
+  
+  /* Checked state */
+  .zomato-app-options input:checked + label::before {
+    background: white;
+    border-color: #f04f5f;
+  }
+  
+  /* Inner red dot when checked */
+  .zomato-app-options input:checked + label::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #f04f5f; /* Red inner dot */
+    border-radius: 50%;
+    position: absolute;
+    left: 3.5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  
+  .zomato-app-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .zomato-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .zomato-button {
+    background: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .zomato-button:hover {
+    background: #e55a72;
+  }
+  
+  .zomato-download-text {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 10px;
+  }
+  
+  .zomato-app-stores {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .zomato-store {
+    width: 150px;
+    cursor: pointer;
+  }
+
+.collapse-it{
+  width:90%;
+  margin:40px auto 40px auto;
+}
+
+.in-span{
+  padding: 10px;
+  color: rgb(108, 108, 112);
+}
+  
+.footer {
+  background-color: #f8f8f8;
+  padding: 40px 80px;
+  font-family: Arial, sans-serif;
+  color: #4f4f4f;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  display: block;
+  text-decoration: none;
+  color: #4f4f4f;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  color: black;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.footer-apps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-apps img {
+  width: 150px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #7f7f7f;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* Country & Language Select */
+.footer-select {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-select select {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,66 @@
+.locations p{
+    font-size: 300%;
+    color: #000;
+    margin: 0;
+    padding: 0 0 0 22px;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+ 
+ 
+ .location-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .location-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .location-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .location-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .location-container p {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .arrow {  
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+  }
+  
+  .see-more {
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .see-more p{
+    font-size: 20px;
+  }
+  

@@ -1,0 +1,47 @@
+
+.image-cards-container {
+    display: flex;
+    gap: 15px;
+    margin: 30px auto 30px auto;
+}
+
+.image-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.image-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.image-card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.image-card-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
