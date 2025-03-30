@@ -5,6 +5,7 @@ import Image_card_sections  from '../components/Image-card-sections'
 import LocationCards from '../components/LocationCards'
 import Collapsible from '../components/Collapsible'
 
+
 const Home = () => {
   return (
     <>

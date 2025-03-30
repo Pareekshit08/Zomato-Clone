@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/navbar.css';
+import Login from '../Modals/Login';
 
 const Navbar = () => {
     return (
@@ -12,7 +13,9 @@ const Navbar = () => {
                 <ul>
                 <l>Investor Relations</l>
                 <l>Add restaurant</l>
-                <l>Login</l>
+                <l>
+                    Login
+                </l>
                 <l>Sign Up</l>
                 </ul>
             </navbar>
