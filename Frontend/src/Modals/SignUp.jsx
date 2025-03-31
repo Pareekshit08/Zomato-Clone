@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/loginModal.css";
 
-const LoginModal = () => {
+const SignUpModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [name,setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -14,13 +14,15 @@ const LoginModal = () => {
     setMessage("");
     setEmail("");
     setPassword("");
+    setName("");
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true); // Start loading
     try {
-      const response = await axios.post("http://localhost:3454/login", {
+      const response = await axios.post("http://localhost:3454/register", {
+        user:name,
         email,
         password,
       });
@@ -29,10 +31,10 @@ const LoginModal = () => {
         setMessage("Login successful!");
         toggleModal();
         setTimeout(() => {
-          alert("Login Successfull");
+          alert("Registration Successfull");
         }, 1000);
       } else {
-        setMessage(response.data.message || "Login failed. Please try again.");
+        setMessage(response.data.message || "Sign Up failed. Please try again.");
       }
     } catch (error) {
       setMessage(
@@ -46,7 +48,7 @@ const LoginModal = () => {
   return (
     <div>
       <button className="login-btn" onClick={toggleModal}>
-        Login
+        Sign Up
       </button>
 
       {isModalOpen && (
@@ -58,6 +60,17 @@ const LoginModal = () => {
             </button>
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
+            <div className="form-group">
+                <label htmlFor="Name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
@@ -81,7 +94,7 @@ const LoginModal = () => {
                 />
               </div>
               <button type="submit" className="submit-btn" disabled={loading}>
-                {loading ? "Logging in..." : "Log In"}
+                {loading ? "Signing Up..." : "Sign Up"}
               </button>
             </form>
             {loading && <div className="loading-spinner"></div>}
@@ -93,4 +106,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default SignUpModal;

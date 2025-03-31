@@ -1,24 +1,27 @@
 import React from 'react';
 import '../styles/navbar.css';
 import Login from '../Modals/Login';
+import SignUp from '../Modals/SignUp';
 
 const Navbar = () => {
     return (
         <div className="navbar">
             <br />
-            <navbar>
+            <nav>
                 <div className="sep">
                 Get App
                 </div>
                 <ul>
-                <l>Investor Relations</l>
-                <l>Add restaurant</l>
-                <l>
-                    Login
-                </l>
-                <l>Sign Up</l>
+                <li>Investor Relations</li>
+                <li>Add restaurant</li>
+                <li>
+               <Login/>
+                </li>
+                <li>
+                    <SignUp/>
+                    </li>
                 </ul>
-            </navbar>
+            </nav>
             <br />
             <div className="hero">
                 <div className="hero-content">
@@ -35,10 +38,10 @@ const Navbar = () => {
                 <option>Indiranagar</option>
             </select>
         </div>
-        <div class="divider"></div>
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" placeholder="Search for restaurant, cuisine or a dish"/>
+        <div className="divider"></div>
+        <div className="search-box">
+            <span className="search-icon">🔍</span>
+            <input type="text" className="search-input" placeholder="Search for restaurant, cuisine or a dish"/>
         </div>
     </div>
 

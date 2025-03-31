@@ -4,11 +4,11 @@ import '../styles/image-cards.css'
 const Image_card = ({img,title,subtitle}) => {
   return (
     <>
-     <div class="image-card">
+     <div className="image-card">
             <img src={img}/>
-            <div class="image-card-content">
-                <div class="image-card-title">{title}</div>
-                <div class="image-card-subtitle">{subtitle}</div>
+            <div className="image-card-content">
+                <div className="image-card-title">{title}</div>
+                <div className="image-card-subtitle">{subtitle}</div>
             </div>
         </div>
     </>

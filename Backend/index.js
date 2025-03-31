@@ -18,10 +18,18 @@ mongoose.connect(process.env.MONGO_URL).then(
     (err)=>console.log(err)
 )
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://example.com",
+    "https://anotherdomain.com",
+];
+
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({origins:allowedOrigins,credentials:true})); // Enable CORS for all routes
 const PORT = process.env.PORT || 5000;
 
 // Middleware
