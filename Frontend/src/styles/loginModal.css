@@ -9,6 +9,23 @@
     color: white;
   }
   
+.Log-Title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Button hover effect */
+  .login-btn:hover {
+    background-color: rgba(243, 243, 243, 0.2);
+  }
+  
+  /* Button active effect */
+  .login-btn:active {
+    background-color: rgba(243, 243, 243, 0.4);
+}
   .login-btn:hover {
     background-color: #0056b3;
   }

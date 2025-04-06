@@ -58,9 +58,9 @@ const SignUpModal = () => {
             <button className="close-btn" onClick={toggleModal}>
               ×
             </button>
-            <h2>Login</h2>
             <form onSubmit={handleLogin}>
             <div className="form-group">
+              <h2 className="Log-Title">Sign Up</h2>
                 <label htmlFor="Name">Name</label>
                 <input
                   type="text"

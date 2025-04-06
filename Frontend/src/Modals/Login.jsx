@@ -56,9 +56,9 @@ const LoginModal = () => {
             <button className="close-btn" onClick={toggleModal}>
               ×
             </button>
-            <h2>Login</h2>
             <form onSubmit={handleLogin}>
               <div className="form-group">
+              <h2 className="Log-Title">Login</h2>
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
