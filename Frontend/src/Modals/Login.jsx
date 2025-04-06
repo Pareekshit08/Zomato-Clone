@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/loginModal.css";
+import { useContext } from "react";
+import { context } from "../Context/context.jsx";
 
 const LoginModal = () => {
+
+  const ContextAuth = useContext(context);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,9 +33,11 @@ const LoginModal = () => {
       if (response.status === 200) {
         setMessage("Login successful!");
         toggleModal();
+        
         setTimeout(() => {
           alert("Login Successfull");
         }, 1000);
+        ContextAuth.setAuth(true); // Set auth to true on successful login
       } else {
         setMessage(response.data.message || "Login failed. Please try again.");
       }

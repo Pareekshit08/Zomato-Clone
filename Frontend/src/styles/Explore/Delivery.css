@@ -1,0 +1,57 @@
+.inspiration-section, .brands-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .food-items-grid, .brands-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px 80px;
+  }
+  
+  .food-item, .brand-item {
+    text-align: center;
+  }
+  
+  .food-image, .brand-image {
+    width: 120px; /* Fixed width for uniform circular containers */
+    height: 120px; /* Same value as width */
+    border-radius: 50%; /* Perfect circular shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Hover effect */
+    display: flex; /* Ensure content alignment */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    object-fit: cover; /* Ensures the image covers the circle */
+  }
+  
+  .food-image:hover, .brand-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .food-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .brand-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #201f1f !important; /* Force black text */
+  }
+  
+  .brand-time {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #383737;
+  }
