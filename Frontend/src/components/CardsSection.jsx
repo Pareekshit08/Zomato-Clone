@@ -6,15 +6,15 @@ const CardsSection = () => {
 
     const data = [
         {img:"https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*",
-            title:'first card',
+            title:'Order Online',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, '
         },
         {img:"https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*",
-            title:'second card',
+            title:'Dining',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,'
         },
         {img:"https://b.zmtcdn.com/data/o2_assets/371de657644f1b5818fcb5d83387c8c91722851940.png?output-format=webp&fit=around|402:360&crop=402:360;*,*",
-            title:'third card',
+            title:'Live Events',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,'
         }
     ]

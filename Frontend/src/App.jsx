@@ -8,6 +8,7 @@ import {context} from './Context/context.jsx';
 import Night from './pages/Night';
 import Delivery from './pages/Delivery';
 import Order from './components/Order/Order';
+import OwnerOrder from './components/AddResaturant/Order.jsx'
 import Layout from './Layout.jsx';
 import AddRestaurant from './pages/AddRestaurant.jsx';
 
@@ -41,6 +42,10 @@ const App = () => {
     ,{
       path:'/order/:id',
       element: auth? <Order /> : <Home />
+    },
+    {
+      path:'/owner/order/:id',
+      element: auth? <OwnerOrder /> : <Home />
     },{
       path:'/addrestaurant',
       element: auth? <AddRestaurant /> : <Home />

@@ -238,7 +238,7 @@ const restaurantData = [
         { dish: "Hot Chocolate Fudge", price: "₹180" },
         { dish: "Belgian Waffle Sundae", price: "₹220" },
         { dish: "Choco Chip Ice Cream", price: "₹150" },
-        { dish: "Fruit Salad Ice Cream", price: "₹200" },
+        { dish: "Fruit Salad Ice Cream", price: "₹200" }, 
         { dish: "Mint Chocolate Ice Cream", price: "₹170" },
         { dish: "Strawberry Cheesecake Ice Cream", price: "₹220" },
         { dish: "Vanilla Milkshake", price: "₹120" },

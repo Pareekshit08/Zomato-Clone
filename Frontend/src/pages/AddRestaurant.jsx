@@ -16,6 +16,9 @@ const AddRestaurant = () => {
       <h2>You can add your Restaurants here</h2>
     </section>
       <ResList />
+      <br />
+      <center><h1>Enter the Restaurant Details here</h1></center>
+      <br />
       <AddList />
       <Footer></Footer>
     </>

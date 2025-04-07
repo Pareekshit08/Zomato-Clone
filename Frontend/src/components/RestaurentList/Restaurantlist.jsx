@@ -1,6 +1,8 @@
 // RestaurantList.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./Restaurantlist.css"; // Add specific styles for the restaurant list if needed
 
 const Restaurantlist = ({ restaurants }) => {
@@ -152,9 +154,72 @@ const Restaurantlist = ({ restaurants }) => {
   ];
 
   // Use provided restaurants or fallback to defaultRestaurants
-  const restaurantData = restaurants || defaultRestaurants;
+   const restaurantData = restaurants || defaultRestaurants;
+   const [restaurant, setRestaurant] = useState([]);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState("");
+
+   useEffect(() => {
+    const fetchRestaurants = async () => {
+      try {
+        const res = await axios.get("http://localhost:3454/api/users/getallRestaurants", {
+          withCredentials: true,
+          validateStatus: false,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+
+        if (res.status === 200) {
+          console.log(res.data[0].image);
+          setRestaurant(res.data);
+        } else {
+          setError("No restaurants found or unauthorized.");
+        }
+      } catch (err) {
+        setError("Failed to load restaurants.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRestaurants();
+  }, []);
+
+  if (loading) return <p className="owner-restaurant-loader">Loading...</p>;
+  if (error) return <p className="owner-restaurant-error">{error}</p>;
 
   return (
+    <>
+    <br />
+    <center><h3>Restaurants from Owners</h3></center>
+    <br />
+    
+    <div className="restaurants-grid">
+      {restaurant.map((restaurant, index) => (
+        <Link to={`/owner/order/${encodeURIComponent(restaurant.name)}`}>
+        <div key={index} className="restaurant-card">
+          <img src={restaurant.image} alt={restaurant.name} className="restaurant-image" />
+          <div className="restaurant-info">
+            <h3 className="restaurant-name">
+              {restaurant.name}
+              {/* <Link to={`/order/${restaurant.id}`}>{restaurant.name}</Link> */}
+            </h3>
+            <p className="restaurant-description">{restaurant.description}</p>
+            <div className="restaurant-meta">
+              <span className="restaurant-rating">⭐ {restaurant.rating.dining}</span>
+              <span className="restaurant-time">{restaurant.deliveryTime}</span>
+            </div>
+          </div>
+        </div>
+        </Link>
+      ))}
+    </div>
+    
+    <br />
+    <center><h3>Restaurants from Zomato</h3></center>
+    <br />
+
     <div className="restaurants-grid">
       {restaurantData.map((restaurant, index) => (
         <Link to={`/order/${restaurant.id}`}>
@@ -175,6 +240,7 @@ const Restaurantlist = ({ restaurants }) => {
         </Link>
       ))}
     </div>
+    </>
   );
 };
 

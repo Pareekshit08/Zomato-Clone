@@ -18,8 +18,10 @@ router.post("/addRestaurant", async (req, res) => {
       const {
         name,
         cuisines,
+        description,
         address,
         contact,
+        deliveryTime,
         timing,
         rating,
         reviews,
@@ -32,8 +34,10 @@ router.post("/addRestaurant", async (req, res) => {
         userId,
         name,
         cuisines,
+        description,
         address,
         contact,
+        deliveryTime,
         timing,
         rating,
         reviews,
@@ -58,5 +62,21 @@ router.post("/addRestaurant", async (req, res) => {
     res.status(200).json(restaurants);
   })
   
+  router.get("/getallRestaurants", async (req, res) => {
+    const restaurants = await Restaurant.find();
+    if (!restaurants) {
+      return res.status(404).json({ message: "No restaurants found" });
+    }
+    res.status(200).json(restaurants);
+  })
+  
+  router.get("/getOneRestaurant/:name", async (req, res) => {
+    const restaurants = await Restaurant.find({"name":req.params.name});
+    if (!restaurants) {
+      return res.status(404).json({ message: "No restaurants found" });
+    }
+    console.log("restaurants", restaurants);
+    res.status(200).json(restaurants);
+  })
 
 module.exports = router;
