@@ -157,12 +157,13 @@ const Restaurantlist = ({ restaurants }) => {
   return (
     <div className="restaurants-grid">
       {restaurantData.map((restaurant, index) => (
+        <Link to={`/order/${restaurant.id}`}>
         <div key={index} className="restaurant-card">
           <img src={restaurant.image} alt={restaurant.name} className="restaurant-image" />
           <div className="restaurant-info">
             <h3 className="restaurant-name">
-              {/* Dynamic link to RestaurantDetails page */}
-              <Link to={`/order/${restaurant.id}`}>{restaurant.name}</Link>
+              {restaurant.name}
+              {/* <Link to={`/order/${restaurant.id}`}>{restaurant.name}</Link> */}
             </h3>
             <p className="restaurant-description">{restaurant.description}</p>
             <div className="restaurant-meta">
@@ -171,6 +172,7 @@ const Restaurantlist = ({ restaurants }) => {
             </div>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   );

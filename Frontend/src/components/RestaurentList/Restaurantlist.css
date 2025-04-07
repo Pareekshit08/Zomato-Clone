@@ -67,3 +67,12 @@
 .restaurant-card .restaurant-time {
   color: #666; /* Subtle text color for delivery time */
 }
+
+a{
+  color: rgba(36, 34, 34, 0.84);
+  text-decoration: none;
+}
+
+.restaurant-info{
+  margin:15px 10px 10px 10px ;
+}

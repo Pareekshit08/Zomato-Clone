@@ -1,0 +1,16 @@
+.welcome-section-red {
+    background-color: #ffe5e5; /* Soft light red */
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .welcome-text-red {
+    font-size: 48px;
+    font-weight: 600;
+    color: #b71c1c; /* Deep red text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .welcome-section-red h2{
+    color: #e34242;;
+  }

@@ -32,7 +32,7 @@
   color: white;
 }
 
-.brand-name {
+.zomato--brand-name {
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
@@ -69,6 +69,7 @@
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.909);
 }
 
 .add-restaurant-content p {

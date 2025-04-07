@@ -29,7 +29,7 @@ const allowedOrigins = [
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origins:allowedOrigins,credentials:true})); // Enable CORS for all routes
+app.use(cors({origin:allowedOrigins,credentials:true})); // Enable CORS for all routes
 const PORT = process.env.PORT || 5000;
 
 // Middleware
@@ -66,7 +66,7 @@ app.post('/login',async(req,res)=>{
             const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
             req.user_id = user._id;
             console.log("This is the user id :",req.user_id);
-            res.header('Authorization', `Bearer ${token}`).json({ token });
+            res.json({ token });
     }
     catch(err)
     {

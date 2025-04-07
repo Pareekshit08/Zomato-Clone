@@ -4,7 +4,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 console.log("the secret key is in verify.js:" + SECRET_KEY);
 const verifyToken = async (req, res, next) => {
     const token = req.header('Authorization');
-    console.log(token);
+    console.log("Token:",token);
     if (!token) return res.status(403).json({ message: 'Access denied' });
 
     try {

@@ -3,7 +3,7 @@
 .login-btn {
     border: none;
     cursor: pointer;
-    background-color: rgba(243, 243, 243, 0);
+    background-color: rgba(205, 15, 15, 0);
     transition: background-color 0.3s ease;
     font-size: 16px;
     color: white;
@@ -96,7 +96,7 @@
   .submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #de2d2d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -106,7 +106,7 @@
   }
   
   .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #97290b;
   }
   
   /* Modal animation */

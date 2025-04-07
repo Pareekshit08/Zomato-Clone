@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../../styles/Explore/Navbar.css";
+import { useContext } from "react";
+import { context } from "../../Context/context.jsx";
+import { useNavigate } from "react-router-dom";
 
 const tabs = [
   { icon: "🍽️", label: "Dining Out", path: "/dining" },
@@ -9,13 +12,21 @@ const tabs = [
 ];
 
 const Navbar = () => {
+  const ContextAuth = useContext(context); // assuming your context provides these
   const location = useLocation();
   const tabRefs = useRef([]);
   const underlineRef = useRef();
+  const navigate = useNavigate();
 
   // Find the active index based on the current path
   const activeIndex = tabs.findIndex((tab) => tab.path === location.pathname);
-
+  const logout = () =>{
+    console.log("Loging out")
+    alert("Logout Successfull");
+    localStorage.removeItem('auth');
+    ContextAuth.setAuth(false);
+    navigate("/");
+  }
   useEffect(() => {
     const currentTab = tabRefs.current[activeIndex];
     if (currentTab && underlineRef.current) {
@@ -29,11 +40,13 @@ const Navbar = () => {
       {/* Top Navbar */}
       <div className="explore-navbar">
         <div className="explore-navbar-left">
-          <span className="get-app">📱 Get the App</span>
+          <span className="get-app"> Get the App</span>
         </div>
         <div className="explore-navbar-right">
-          <span className="explore-nav-link">Add restaurant</span>
-          <span className="explore-nav-link">Logout</span>
+          <span className="explore-nav-link" onClick={()=>{
+            navigate("/restaurent");
+          }} >Add restaurant</span>
+          <span className="explore-nav-link" onClick={logout}>Logout</span>
         </div>
       </div>
 

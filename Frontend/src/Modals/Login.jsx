@@ -33,7 +33,7 @@ const LoginModal = () => {
       if (response.status === 200) {
         setMessage("Login successful!");
         toggleModal();
-        
+        localStorage.setItem("token", response.data.token);
         setTimeout(() => {
           alert("Login Successfull");
         }, 1000);
@@ -46,7 +46,8 @@ const LoginModal = () => {
         error.response?.data?.message || "Something went wrong. Please try again."
       );
     } finally {
-      setLoading(false); // Stop loading
+      setTimeout(()=>{setLoading(false);},1000)
+       // Stop loading
     }
   };
 

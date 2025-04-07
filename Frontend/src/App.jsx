@@ -9,6 +9,7 @@ import Night from './pages/Night';
 import Delivery from './pages/Delivery';
 import Order from './components/Order/Order';
 import Layout from './Layout.jsx';
+import AddRestaurant from './pages/AddRestaurant.jsx';
 
 const App = () => {
 
@@ -21,10 +22,7 @@ const App = () => {
     },{
       element:auth ? <Layout /> : <Home />,
       children:[
-          {
-            path:'/restaurent',
-            element: auth? <Restaurent /> : <Home />
-          },{
+         {
             path:'/dining',
             element: auth? <Dining /> : <Home />
           },{
@@ -35,10 +33,17 @@ const App = () => {
             element: auth? <Night /> : <Home />
           }
       ]
-    }
+    },
+    {
+      path:'/restaurent',
+      element: auth? <Restaurent /> : <Home />
+    },
     ,{
       path:'/order/:id',
       element: auth? <Order /> : <Home />
+    },{
+      path:'/addrestaurant',
+      element: auth? <AddRestaurant /> : <Home />
     }
   ])
 
