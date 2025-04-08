@@ -162,7 +162,7 @@ const Restaurantlist = ({ restaurants }) => {
    useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const res = await axios.get("http://localhost:3454/api/users/getallRestaurants", {
+        const res = await axios.get("https://zomato-clone-c8ni.onrender.com/api/users/getallRestaurants", {
           withCredentials: true,
           validateStatus: false,
           headers: {

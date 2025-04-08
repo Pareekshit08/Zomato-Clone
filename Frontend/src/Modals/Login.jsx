@@ -25,7 +25,7 @@ const LoginModal = () => {
     e.preventDefault();
     setLoading(true); // Start loading
     try {
-      const response = await axios.post("http://localhost:3454/login", {
+      const response = await axios.post("https://zomato-clone-c8ni.onrender.com/login", {
         email,
         password,
       });

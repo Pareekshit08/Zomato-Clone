@@ -55,7 +55,7 @@ const addList = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      const response = await axios.post("http://localhost:3454/api/users/addRestaurant", formData,{withCredentials:true,validateStatus:false,headers: {
+      const response = await axios.post("https://zomato-clone-c8ni.onrender.com/api/users/addRestaurant", formData,{withCredentials:true,validateStatus:false,headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       }}); 
       if(response.status >= 200 && response.status < 300){

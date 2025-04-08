@@ -10,7 +10,7 @@ const ResList = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const res = await axios.get("http://localhost:3454/api/users/getRestaurants", {
+        const res = await axios.get("https://zomato-clone-c8ni.onrender.com/api/users/getRestaurants", {
           withCredentials: true,
           validateStatus: false,
           headers: {

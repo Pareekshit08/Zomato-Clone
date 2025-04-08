@@ -21,7 +21,7 @@ const SignUpModal = () => {
     e.preventDefault();
     setLoading(true); // Start loading
     try {
-      const response = await axios.post("http://localhost:3454/register", {
+      const response = await axios.post("https://zomato-clone-c8ni.onrender.com/register", {
         user:name,
         email,
         password,

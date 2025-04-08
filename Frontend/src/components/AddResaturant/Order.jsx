@@ -14,7 +14,7 @@ const Order = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const res = await axios.get(`http://localhost:3454/api/users/getOneRestaurant/${id}`, {
+        const res = await axios.get(`https://zomato-clone-c8ni.onrender.com/api/users/getOneRestaurant/${id}`, {
           withCredentials: true,
           validateStatus: false,
           headers: {
