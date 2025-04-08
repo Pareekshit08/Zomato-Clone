@@ -186,35 +186,37 @@ const Restaurantlist = ({ restaurants }) => {
     fetchRestaurants();
   }, []);
 
-  if (loading) return <p className="owner-restaurant-loader">Loading...</p>;
-  if (error) return <p className="owner-restaurant-error">{error}</p>;
-
   return (
     <>
     <br />
     <center><h3>Restaurants from Owners</h3></center>
     <br />
-    
+    {restaurant ? 
     <div className="restaurants-grid">
-      {restaurant.map((restaurant, index) => (
-        <Link to={`/owner/order/${encodeURIComponent(restaurant.name)}`}>
-        <div key={index} className="restaurant-card">
-          <img src={restaurant.image} alt={restaurant.name} className="restaurant-image" />
-          <div className="restaurant-info">
-            <h3 className="restaurant-name">
-              {restaurant.name}
-              {/* <Link to={`/order/${restaurant.id}`}>{restaurant.name}</Link> */}
-            </h3>
-            <p className="restaurant-description">{restaurant.description}</p>
-            <div className="restaurant-meta">
-              <span className="restaurant-rating">⭐ {restaurant.rating.dining}</span>
-              <span className="restaurant-time">{restaurant.deliveryTime}</span>
-            </div>
+    {restaurant.map((restaurant, index) => (
+      <Link to={`/owner/order/${encodeURIComponent(restaurant.name)}`}>
+      <div key={index} className="restaurant-card">
+        <img src={restaurant.image} alt={restaurant.name} className="restaurant-image" />
+        <div className="restaurant-info">
+          <h3 className="restaurant-name">
+            {restaurant.name}
+            {/* <Link to={`/order/${restaurant.id}`}>{restaurant.name}</Link> */}
+          </h3>
+          <p className="restaurant-description">{restaurant.description}</p>
+          <div className="restaurant-meta">
+            <span className="restaurant-rating">⭐ {restaurant.rating.dining}</span>
+            <span className="restaurant-time">{restaurant.deliveryTime}</span>
           </div>
         </div>
-        </Link>
-      ))}
-    </div>
+      </div>
+      </Link>
+    ))}
+  </div>
+    :<div>
+      {loading && <p className="owner-restaurant-loader">Loading...</p>}
+      {error && <p className="owner-restaurant-error">{error}</p>}
+      </div>}
+    
     
     <br />
     <center><h3>Restaurants from Zomato</h3></center>

@@ -83,6 +83,7 @@ const addList = () => {
   };
 
   return (
+    <>
     <div className="add-list-container">
     <form className="form-element" onSubmit={handleSubmit} style={{ maxWidth: "600px", margin: "auto" }}>
       <h2>Add New Restaurant</h2>
@@ -137,6 +138,7 @@ const addList = () => {
       <button type="submit">Submit</button>
     </form>
     </div>
+    </>
   );
 };
 
