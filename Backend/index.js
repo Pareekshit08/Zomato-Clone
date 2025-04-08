@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGO_URL).then(
 
 const allowedOrigins = [
     "http://localhost:3000",
+    "https://pareekshits08-zomato-website-clone.vercel.app",
     "http://localhost:5173",
     "https://example.com",
     "https://anotherdomain.com",
